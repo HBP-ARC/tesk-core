@@ -78,7 +78,7 @@ class S3Transput(Transput):
     def upload_file(self):
         logging.debug('Uploading s3 object: "%s" Target: %s', self.path,  self.bucket + "/" + self.file_path)
         try:
-            self.bucket_obj.upload_file(Filename=self.path, Key=self.file_path)
+            self.bucket_obj.upload_file(Filename=self.path, Key=self.file_path, ExtraArgs={'ACL':'public-read'})
         except (botocore.exceptions.ClientError,  OSError) as err:
             logging.error("File upload failed for '%s'", self.bucket + "/" + self.file_path)
             logging.error(err)
