@@ -9,5 +9,4 @@
 imageName="$1"
 shift
 
-docker run "eu.gcr.io/tes-wes/$imageName:testing" "$@"
-
+docker run "docker-registry.ebrains.eu/tc/tesk/$imageName:v0.10.0-ebrains" "$@"

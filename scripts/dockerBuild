@@ -1,10 +1,9 @@
 
-
 # 
 # Usage:
 # 
-#     buildDockerImage filer          or
-#     buildDockerImage taskmaster
+#     dockerBuild filer          or
+#     dockerBuild taskmaster
 # 
 
-docker build -t "eu.gcr.io/tes-wes/$1:testing" -f "containers/$1.Dockerfile" .
+docker build -t "docker-registry.ebrains.eu/tc/tesk/$1:v0.10.0-ebrains" -f "containers/$1.Dockerfile" .
